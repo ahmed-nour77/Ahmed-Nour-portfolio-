@@ -1,493 +1,1407 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmed Nour — AI &amp; Data Engineer</title>
-<meta name="description" content="Portfolio of Ahmed Mohamed Nour Eldin — AI Engineer specializing in deep learning, computer vision, data analysis and embedded systems.">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-:root{
-  --ink:#10192B; --paper:#F6F4EE; --steel:#3D5A80; --steel-dim:#6B85A3;
-  --brass:#A67C3D; --slate:#5C6773; --line:#DCD7C9; --card:#FFFFFF;
-  --serif:'Source Serif 4', Georgia, serif;
-  --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono:'IBM Plex Mono', 'Courier New', monospace;
-  --wrap:1120px;
-}
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
-a{ color:var(--steel); text-decoration:none; }
-a:hover{ color:var(--brass); }
-a:focus-visible, button:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
-img, svg{ max-width:100%; display:block; }
-.wrap{ max-width:var(--wrap); margin:0 auto; padding:0 32px; }
-h1,h2,h3{ font-family:var(--serif); font-weight:600; line-height:1.15; margin:0 0 .5em 0; color:var(--ink); }
-h1{ font-size:clamp(2.4rem,5vw,3.6rem); font-weight:700; }
-h2{ font-size:clamp(1.6rem,3vw,2.1rem); }
-h3{ font-size:1.2rem; }
-p{ margin:0 0 1em 0; color:var(--ink); }
-.lede{ color:var(--slate); font-size:1.1rem; }
-.eyebrow{ font-family:var(--mono); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--brass); display:flex; align-items:center; gap:10px; margin-bottom:14px; }
-.eyebrow::before{ content:""; width:22px; height:1px; background:var(--brass); display:inline-block; }
+    <!-- SEO Meta Tags -->
+    <title>Ahmed Mohamed Nour Eldin | Data Scientist & AI Engineer</title>
+    <meta name="description"
+        content="Ahmed Mohamed Nour Eldin — Data Scientist & AI Engineer specializing in Predictive Modeling, Deep Learning, Computer Vision, and Business Intelligence.">
+    <meta name="keywords"
+        content="Ahmed Nour, Ahmed Mohamed Nour Eldin, Data Scientist, AI Engineer, Machine Learning, Deep Learning, Computer Vision, PyTorch, TensorFlow, CIB Egypt, Delta University">
+    <meta name="author" content="Ahmed Mohamed Nour Eldin">
+    <meta name="robots" content="index, follow">
 
-/* Prominent CV bar at the very top */
-.cv-bar{
-  background:var(--ink); color:var(--paper); text-align:center;
-  font-family:var(--mono); font-size:.8rem; letter-spacing:.04em;
-  padding:11px 16px;
-}
-.cv-bar a{ color:var(--paper); border-bottom:1px solid var(--brass); font-weight:600; }
-.cv-bar a:hover{ color:var(--brass); }
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ahmed Nour Eldin | Data Scientist & AI Engineer">
+    <meta property="og:description" content="Transforming complex data into predictive intelligence and production-ready AI solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ahmed-nour77.github.io/Ahmed-Nour-portfolio-/">
+    <meta property="og:image" content="images/ahmed-nour-headshot.jpg">
 
-header.site{ border-bottom:1px solid var(--line); background:rgba(246,244,238,.92); backdrop-filter:blur(6px); position:sticky; top:0; z-index:50; }
-.nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 32px; max-width:var(--wrap); margin:0 auto; }
-.brand{ font-family:var(--serif); font-weight:700; font-size:1.15rem; color:var(--ink); letter-spacing:.01em; }
-.brand span{ color:var(--brass); }
-.nav-links{ display:flex; align-items:center; gap:30px; list-style:none; margin:0; padding:0; font-family:var(--mono); font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; }
-.nav-links a{ color:var(--ink); padding-bottom:4px; border-bottom:1px solid transparent; }
-.nav-links a:hover, .nav-links a.active{ color:var(--steel); border-bottom-color:var(--brass); }
-.nav-cv{ background:var(--brass); color:#fff !important; padding:9px 16px; border-radius:2px; border-bottom:none !important; }
-.nav-cv:hover{ background:var(--ink); color:var(--paper) !important; }
-.nav-toggle{ display:none; }
-@media (max-width:760px){
-  .nav-links{ position:fixed; inset:64px 0 auto 0; background:var(--paper); flex-direction:column; align-items:flex-start; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .25s ease; }
-  .nav-links.open{ max-height:360px; }
-  .nav-links li{ border-top:1px solid var(--line); width:100%; }
-  .nav-links a{ display:block; padding:16px 32px; border-bottom:none; }
-  .nav-cv{ margin:14px 32px; display:inline-block; }
-  .nav-toggle{ display:block; background:none; border:1px solid var(--line); border-radius:4px; width:38px; height:34px; cursor:pointer; position:relative; }
-  .nav-toggle span, .nav-toggle::before, .nav-toggle::after{ content:""; position:absolute; left:8px; right:8px; height:1.5px; background:var(--ink); }
-  .nav-toggle::before{ top:11px; } .nav-toggle span{ top:16.5px; } .nav-toggle::after{ top:22px; }
-}
+    <!-- Fonts: Plus Jakarta Sans for tech look, Tajawal for Arabic, JetBrains Mono for code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-.hero{ padding:72px 0 72px; position:relative; overflow:hidden; }
-.hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; }
-.hero h1{ margin-bottom:.3em; }
-.hero .role{ font-family:var(--mono); color:var(--steel); font-size:1.05rem; margin-bottom:22px; }
-.hero .actions{ display:flex; gap:16px; margin-top:30px; flex-wrap:wrap; }
-.btn{ font-family:var(--mono); font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; padding:13px 22px; border:1px solid var(--ink); border-radius:2px; display:inline-block; color:var(--ink); transition:background .15s,color .15s,border-color .15s; cursor:pointer; }
-.btn:hover{ background:var(--ink); color:var(--paper); }
-.btn.primary{ background:var(--brass); color:#fff; border-color:var(--brass); }
-.btn.primary:hover{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
-@media (max-width:820px){ .hero-grid{ grid-template-columns:1fr; } .hero .diagram{ order:-1; max-width:280px; margin:0 auto 20px; } }
+    <!-- Font Awesome 6 & Devicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 
-section{ padding:76px 0; border-top:1px solid var(--line); }
-section.no-border{ border-top:none; }
-.section-head{ max-width:640px; margin-bottom:44px; }
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
-.domain{ margin-bottom:58px; } .domain:last-child{ margin-bottom:0; }
-.domain-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:26px; border-bottom:1px solid var(--line); padding-bottom:14px; }
-.domain-head h3{ font-family:var(--mono); text-transform:uppercase; letter-spacing:.08em; font-size:.95rem; color:var(--steel); margin:0; }
-.domain-head .count{ font-family:var(--mono); color:var(--slate); font-size:.8rem; }
-
-.grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
-@media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
-.card{ background:var(--card); border:1px solid var(--line); padding:26px 26px 24px; border-radius:3px; transition:border-color .15s; }
-.card:hover{ border-color:var(--steel); }
-.card h4{ font-family:var(--serif); font-size:1.15rem; margin:0 0 8px; color:var(--ink); }
-.card p{ color:var(--slate); font-size:.95rem; margin-bottom:14px; }
-.tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
-.tag{ font-family:var(--mono); font-size:.72rem; color:var(--steel); background:#EEF2F6; border:1px solid #DCE4EC; padding:3px 9px; border-radius:2px; }
-.card-links{ display:flex; gap:18px; font-family:var(--mono); font-size:.78rem; }
-.card-links a::after{ content:" ↗"; }
-
-.skill-cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:34px; }
-@media (max-width:820px){ .skill-cols{ grid-template-columns:1fr 1fr; } }
-@media (max-width:560px){ .skill-cols{ grid-template-columns:1fr; } }
-.skill-col h4{ font-family:var(--mono); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brass); margin-bottom:14px; }
-.skill-col ul{ list-style:none; margin:0; padding:0; }
-.skill-col li{ padding:7px 0; border-bottom:1px dashed var(--line); font-size:.93rem; color:var(--ink); }
-.skill-col li:last-child{ border-bottom:none; }
-
-.timeline{ position:relative; padding-left:26px; border-left:1px solid var(--line); }
-.tl-item{ position:relative; padding-bottom:40px; } .tl-item:last-child{ padding-bottom:0; }
-.tl-item::before{ content:""; position:absolute; left:-30px; top:4px; width:9px; height:9px; border-radius:50%; background:var(--paper); border:2px solid var(--brass); }
-.tl-date{ font-family:var(--mono); font-size:.78rem; color:var(--slate); margin-bottom:6px; display:block; }
-.tl-item h4{ font-family:var(--serif); font-size:1.1rem; margin:0 0 4px; }
-.tl-item .org{ color:var(--steel); font-size:.92rem; margin-bottom:8px; display:block; }
-.tl-item p{ color:var(--slate); font-size:.93rem; margin-bottom:0; }
-
-/* Education card */
-.edu-card{ background:var(--card); border:1px solid var(--line); border-left:3px solid var(--brass); border-radius:3px; padding:26px 28px; }
-.edu-card h4{ margin:0 0 6px; font-family:var(--serif); font-size:1.15rem; }
-.edu-card .school{ color:var(--steel); font-size:.95rem; margin-bottom:10px; display:block; }
-.edu-meta{ display:flex; gap:22px; flex-wrap:wrap; font-family:var(--mono); font-size:.8rem; color:var(--slate); margin-top:10px; }
-.edu-meta b{ color:var(--ink); font-weight:600; }
-
-footer.site{ border-top:1px solid var(--line); padding:40px 0; margin-top:40px; }
-.footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-family:var(--mono); font-size:.78rem; color:var(--slate); }
-.footer-links{ display:flex; gap:22px; }
-
-.about-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; }
-@media (max-width:820px){ .about-grid{ grid-template-columns:1fr; } }
-.about-photo{ width:100%; aspect-ratio:3/4; background:var(--ink); border-radius:3px; position:relative; overflow:hidden; }
-.about-photo .initials{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:5rem; color:rgba(246,244,238,.92); }
-.stat-row{ display:flex; gap:34px; margin-top:24px; flex-wrap:wrap; }
-.stat{ font-family:var(--mono); }
-.stat b{ display:block; font-family:var(--serif); font-size:1.7rem; color:var(--ink); }
-.stat span{ font-size:.74rem; color:var(--slate); text-transform:uppercase; letter-spacing:.06em; }
-
-.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
-@media (max-width:820px){ .contact-grid{ grid-template-columns:1fr; } }
-.contact-list{ list-style:none; margin:0; padding:0; }
-.contact-list li{ padding:20px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline; gap:16px; }
-.contact-list li:first-child{ padding-top:0; }
-.contact-list .label{ font-family:var(--mono); font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; color:var(--slate); }
-.contact-list .value{ font-family:var(--serif); font-size:1.15rem; }
-form.contact-form{ display:flex; flex-direction:column; gap:18px; }
-.field label{ display:block; font-family:var(--mono); font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; color:var(--slate); margin-bottom:8px; }
-.field input, .field textarea{ width:100%; border:1px solid var(--line); background:var(--card); padding:12px 14px; font-family:var(--sans); font-size:.95rem; border-radius:2px; color:var(--ink); }
-.field input:focus, .field textarea:focus{ outline:none; border-color:var(--steel); }
-form.contact-form button{ font-family:var(--mono); text-transform:uppercase; letter-spacing:.05em; font-size:.82rem; padding:13px 22px; background:var(--ink); color:var(--paper); border:none; border-radius:2px; cursor:pointer; align-self:flex-start; transition:background .15s; }
-form.contact-form button:hover{ background:var(--brass); }
-.form-note{ font-family:var(--mono); font-size:.78rem; color:var(--slate); margin-top:4px; }
-
-.center{ text-align:center; }
-.max-w{ max-width:720px; }
-</style>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ahmed Mohamed Nour Eldin",
+        "jobTitle": "Data Scientist & AI Engineer",
+        "email": "mailto:an2443059@gmail.com",
+        "telephone": "+201001042364",
+        "alumniOf": "Delta University for Science and Technology",
+        "url": "https://ahmed-nour77.github.io/Ahmed-Nour-portfolio-/",
+        "sameAs": [
+            "https://github.com/ahmed-nour77",
+            "https://linkedin.com/in/ahmed-nour-856392330"
+        ],
+        "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Computer Vision", "Predictive Modeling", "Python", "SQL", "Power BI", "IoT"]
+    }
+    </script>
 </head>
+
 <body>
-
-<div class="cv-bar">📄 <a href="Ahmed_Nour_CV.pdf" download>Download my CV (PDF)</a></div>
-
-<header class="site">
-  <nav class="nav">
-    <a class="brand" href="#home">Ahmed <span>Nour</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
-    <ul class="nav-links">
-      <li><a class="nav-cv" href="Ahmed_Nour_CV.pdf" download>Download CV</a></li>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-
-  <!-- ================= HOME ================= -->
-  <section id="home" class="hero no-border">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Portfolio</div>
-        <h1>Ahmed Mohamed<br>Nour Eldin</h1>
-        <div class="role">AI Engineer — Deep Learning · Computer Vision · Data Analysis</div>
-        <p class="lede max-w">I build systems that turn raw signal into decisions — from CNNs that catch deepfakes and violence in video, to IoT sensor networks that manage physical space, to dashboards that make a spreadsheet argue its case. Based in Egypt, currently pursuing a B.Sc. in Artificial Intelligence.</p>
-        <div class="actions">
-          <a class="btn primary" href="Ahmed_Nour_CV.pdf" download>Download CV ↓</a>
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Get in Touch</a>
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+        <div class="loader-inner">
+            <div class="loader-core">
+                <span class="core-pulse"></span>
+                <span class="core-text">AN</span>
+            </div>
+            <div class="loader-status">
+                <span class="terminal-prefix">&gt;</span> <span id="loaderMsg">Initializing Neural Engine...</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loaderBar"></div>
+            </div>
         </div>
-      </div>
-      <div class="diagram" aria-hidden="true">
-        <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" stroke="#A67C3D" stroke-width="1">
-            <line x1="180" y1="80" x2="90" y2="230"/>
-            <line x1="180" y1="80" x2="270" y2="230"/>
-            <line x1="90" y1="230" x2="270" y2="230"/>
-            <line x1="180" y1="80" x2="180" y2="180"/>
-            <line x1="180" y1="180" x2="90" y2="230"/>
-            <line x1="180" y1="180" x2="270" y2="230"/>
-          </g>
-          <g>
-            <circle cx="180" cy="80" r="34" fill="#10192B"/>
-            <text x="180" y="85" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#F6F4EE">AI</text>
-            <circle cx="90" cy="230" r="34" fill="#10192B"/>
-            <text x="90" y="235" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#F6F4EE">DATA</text>
-            <circle cx="270" cy="230" r="34" fill="#10192B"/>
-            <text x="270" y="235" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#F6F4EE">IoT</text>
-            <circle cx="180" cy="180" r="6" fill="#A67C3D"/>
-          </g>
-        </svg>
-      </div>
     </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">What I work on</div>
-        <h2>Three domains, one habit of thought</h2>
-        <p class="lede">Each domain feeds the others — models need clean data, sensors need models to interpret them, and none of it matters without a way to see the result.</p>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <h4>Deep Learning &amp; Computer Vision</h4>
-          <p>CNN and Transformer-based systems for detection tasks — deepfakes, livestock disease — built with TensorFlow, PyTorch and OpenCV.</p>
-          <div class="tags"><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span></div>
-        </div>
-        <div class="card">
-          <h4>Data Analysis &amp; BI</h4>
-          <p>Turning raw datasets into dashboards and decisions — EDA, statistical analysis, and reporting with Python and Power BI.</p>
-          <div class="tags"><span class="tag">Pandas</span><span class="tag">Power BI</span><span class="tag">Scikit-learn</span></div>
-        </div>
-        <div class="card">
-          <h4>IoT &amp; Embedded Systems</h4>
-          <p>Sensor-driven systems — from environmental monitoring to smart parking — connecting ESP32 hardware to live web dashboards.</p>
-          <div class="tags"><span class="tag">ESP32</span><span class="tag">MQTT</span><span class="tag">LoRa</span></div>
-        </div>
-      </div>
+    <!-- ========== SCROLL PROGRESS BAR ========== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollBar"></div>
     </div>
-  </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about">
-    <div class="wrap about-grid">
-      <div>
-        <div class="about-photo"><div class="initials">AN</div></div>
-        <div class="stat-row">
-          <div class="stat"><b>2027</b><span>Expected graduation</span></div>
-          <div class="stat"><b>9+</b><span>Projects shipped</span></div>
-          <div class="stat"><b>5</b><span>Certifications</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="eyebrow">About</div>
-        <h2>Results-driven, cross-domain, and still learning on purpose.</h2>
-        <p class="lede">I'm an AI Engineer with a strong foundation in machine learning, deep learning, computer vision and NLP — and a parallel track in data analysis and business intelligence. I'm comfortable moving between a PyTorch training loop, a Power BI dashboard, and an ESP32 sketch, because in practice most real problems need all three.</p>
-        <p>I care about models that actually ship: clean data pipelines, measured performance gains, and interfaces a non-technical person can read.</p>
+    <!-- ========== NAVIGATION ========== -->
+    <header class="navbar-wrapper" id="navbar">
+        <nav class="nav-container">
+            <a href="#hero" class="nav-brand" aria-label="Home">
+                <span class="brand-code">&lt;</span>
+                <span class="brand-name">Ahmed.Nour</span>
+                <span class="brand-code">/&gt;</span>
+                <span class="brand-badge">AI</span>
+            </a>
 
-        <div class="eyebrow" style="margin-top:36px;">Education</div>
-        <div class="edu-card">
-          <h4>Bachelor of Science in Artificial Intelligence</h4>
-          <span class="school">Delta University for Science and Technology</span>
-          <div class="edu-meta">
-            <span><b>Expected Graduation:</b> 2027</span>
-            <span><b>Current Level:</b> 4th Year</span>
-            <span><b>Grade:</b> Very Good</span>
-          </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active" data-i18n="nav_home">Home</a>
+                <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="#leadership" class="nav-link" data-i18n="nav_leadership">Leadership</a>
+                <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+                <a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a>
+                <a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a>
+                <a href="#certifications" class="nav-link" data-i18n="nav_certifications">Certifications</a>
+                <a href="#education" class="nav-link" data-i18n="nav_education">Education</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+            </div>
+
+            <div class="nav-controls">
+                <!-- Theme Toggle Button -->
+                <button class="control-btn" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+
+                <!-- Language Toggle Button -->
+                <button class="control-btn lang-btn" id="langToggle" aria-label="Toggle language" title="Switch Language">
+                    <span id="langText">العربية</span>
+                </button>
+
+                <!-- CV Quick Download / View -->
+                <a href="cv.html" target="_blank" class="nav-cv-btn" title="View Full CV">
+                    <i class="fas fa-file-invoice"></i>
+                    <span data-i18n="nav_cv">CV</span>
+                </a>
+
+                <!-- Mobile Hamburger -->
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section" id="hero">
+        <!-- Interactive Neural Canvas -->
+        <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        <div class="grid-overlay"></div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <!-- Terminal Command Tag -->
+                <div class="terminal-badge">
+                    <span class="term-dot red"></span>
+                    <span class="term-dot yellow"></span>
+                    <span class="term-dot green"></span>
+                    <span class="term-path">~/ahmed-nour-eldin [neural-core: online]</span>
+                </div>
+
+                <div class="hero-greeting" data-i18n="hero_hello">Hello world, I am</div>
+                <h1 class="hero-title">
+                    <span class="first-name">Ahmed</span>
+                    <span class="last-name">Nour Eldin</span>
+                </h1>
+
+                <!-- Dynamic Role Typing -->
+                <div class="role-container">
+                    <span class="role-prefix">&gt; </span>
+                    <span class="typed-text" id="typedRole"></span>
+                    <span class="cursor">&nbsp;</span>
+                </div>
+
+                <!-- Mission Pitch -->
+                <p class="hero-bio" data-i18n="hero_bio">
+                    AI Engineer & Data Scientist passionate about building end-to-end predictive models, deep learning architectures, and scalable analytics pipelines. Transforming raw business data into actionable foresight.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-microchip"></i>
+                        <span data-i18n="hero_btn_projects">Explore Projects</span>
+                    </a>
+                    <a href="#leadership" class="btn btn-secondary">
+                        <i class="fas fa-award"></i>
+                        <span data-i18n="hero_btn_lead">Leadership & Spotlights</span>
+                    </a>
+                    <a href="https://wa.me/201001042364" target="_blank" rel="noopener" class="btn btn-outline whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-i18n="hero_btn_chat">WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-bar">
+                    <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/ahmed-nour-856392330" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="tooltip">LinkedIn</span>
+                    </a>
+                    <a href="mailto:an2443059@gmail.com" aria-label="Email" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                        <span class="tooltip">an2443059@gmail.com</span>
+                    </a>
+                    <a href="tel:+201001042364" aria-label="Phone" class="social-icon">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="tooltip">+20 100 104 2364</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Visual / Profile Image Card with NEW Custom AI Telemetry Card -->
+            <div class="hero-visual">
+                <div class="profile-card-glow"></div>
+                <div class="profile-card">
+                    <div class="card-media">
+                        <img src="images/ahmed-nour-portrait.jpg" alt="Ahmed Mohamed Nour Eldin" class="profile-img" loading="eager">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text" data-i18n="status_available">Available for AI Opportunities</span>
+                        </div>
+                    </div>
+
+                    <!-- NEW CREATIVE AI TELEMETRY HUD (Replacing the class mockup) -->
+                    <div class="ai-hud-card">
+                        <div class="hud-top-bar">
+                            <div class="hud-status-node">
+                                <span class="hud-live-dot"></span>
+                                <span class="hud-system-title">AI TELEMETRY // CORE v3.2</span>
+                            </div>
+                            <span class="hud-latency">⚡ 12ms CUDA LATENCY</span>
+                        </div>
+
+                        <div class="hud-metrics-grid">
+                            <div class="hud-metric-row">
+                                <span class="hud-label" data-i18n="hud_pipeline">Active Pipeline:</span>
+                                <span class="hud-value highlight">Vision & Predictive Ensemble</span>
+                            </div>
+                            <div class="hud-metric-row">
+                                <span class="hud-label" data-i18n="hud_frameworks">Key Frameworks:</span>
+                                <span class="hud-value">PyTorch • XGBoost • TensorFlow</span>
+                            </div>
+                            <div class="hud-metric-row">
+                                <span class="hud-label" data-i18n="hud_efficiency">CIB Benchmark:</span>
+                                <span class="hud-value green">+15% Integration Efficiency</span>
+                            </div>
+                            <div class="hud-metric-row">
+                                <span class="hud-label" data-i18n="hud_vision">Detection Gain:</span>
+                                <span class="hud-value cyan">+30% Accuracy / -25% False Positives</span>
+                            </div>
+                        </div>
+
+                        <div class="hud-progress-wrap">
+                            <div class="hud-progress-info">
+                                <span data-i18n="hud_confidence">Model Confidence Score</span>
+                                <span class="hud-pct">99.4%</span>
+                            </div>
+                            <div class="hud-progress-track">
+                                <div class="hud-progress-fill" style="width: 99.4%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="hud-tags-row">
+                            <span class="hud-tag">#DataScience</span>
+                            <span class="hud-tag">#ComputerVision</span>
+                            <span class="hud-tag">#PredictiveAI</span>
+                            <span class="hud-tag">#FinTech_AI</span>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badges -->
+                    <div class="floating-badge badge-cib">
+                        <i class="fas fa-building-columns"></i>
+                        <span>CIB AI Intern</span>
+                    </div>
+                    <div class="floating-badge badge-nvidia">
+                        <i class="fas fa-bolt"></i>
+                        <span>NVIDIA DLI Certified</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <!-- Scroll Down Anchor -->
+        <a href="#about" class="scroll-down" aria-label="Scroll to About Section">
+            <span class="mouse-icon">
+                <span class="mouse-wheel"></span>
+            </span>
+            <span class="scroll-text" data-i18n="hero_scroll">Scroll Down</span>
+        </a>
+    </section>
+
+    <!-- ========== METRICS / STATS BAR ========== -->
+    <section class="stats-strip">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-count="3">3+</div>
+                <div class="stat-label" data-i18n="stat_frameworks">AI Frameworks Benchmarked (CIB)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="120">120+</div>
+                <div class="stat-label" data-i18n="stat_hours">Intensive AI Training Hours (NTI)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="30">+30%</div>
+                <div class="stat-label" data-i18n="stat_cv">Accuracy Boost in Vision Pipelines</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="5">5+</div>
+                <div class="stat-label" data-i18n="stat_certifications">Accredited Certifications</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section-block about-section" id="about">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="about_tag">// 01. ABOUT ME</span>
+                <h2 class="section-heading" data-i18n="about_title">Bridging Data Science & Production AI</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-portrait-wrapper">
+                    <div class="portrait-card">
+                        <img src="images/ahmed-nour.jpg" alt="Ahmed Nour Delta University" class="about-portrait" loading="lazy">
+                        <div class="portrait-overlay">
+                            <div class="portrait-meta">
+                                <h4 class="meta-name">Ahmed Mohamed Nour Eldin</h4>
+                                <p class="meta-sub">Delta University for Science & Technology</p>
+                                <div class="meta-tags">
+                                    <span>#DataScience</span>
+                                    <span>#ComputerVision</span>
+                                    <span>#PredictiveModeling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-details">
+                    <h3 class="about-subheading" data-i18n="about_subheading">
+                        Architecting Intelligent Systems from Sensor Data to Deep Vision
+                    </h3>
+                    
+                    <p class="about-paragraph" data-i18n="about_p1">
+                        I am an AI Engineer and Data Scientist studying Artificial Intelligence at <strong>Delta University for Science and Technology</strong> (Expected June 2027). With a practical mindset forged through real-world corporate environments like <strong>Commercial International Bank (CIB Egypt)</strong> and intensive training at <strong>NTI</strong> and <strong>BUE</strong>, I specialize in transforming raw tabular, image, and sensor data into high-value automated intelligence.
+                    </p>
+
+                    <p class="about-paragraph" data-i18n="about_p2">
+                        My technical sweet spot spans the entire machine learning lifecycle: from statistical EDA and advanced feature engineering to training state-of-the-art models (XGBoost, LightGBM, CNNs, Transformers) and deploying explainable, production-ready apps using <strong>Flask</strong>, <strong>Streamlit</strong>, and <strong>Power BI</strong>.
+                    </p>
+
+                    <!-- Core Competency Cards -->
+                    <div class="competencies-grid">
+                        <div class="comp-card">
+                            <div class="comp-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="comp-content">
+                                <h4 data-i18n="comp_1_title">Predictive Analytics</h4>
+                                <p data-i18n="comp_1_desc">Forecasting equipment failures, customer behavior, and business KPIs with SHAP explainability.</p>
+                            </div>
+                        </div>
+
+                        <div class="comp-card">
+                            <div class="comp-icon"><i class="fas fa-brain"></i></div>
+                            <div class="comp-content">
+                                <h4 data-i18n="comp_2_title">Deep Learning & Vision</h4>
+                                <p data-i18n="comp_2_desc">CNNs, Spectrogram feature extraction, audio/video deepfake detection, and medical/disease diagnosis.</p>
+                            </div>
+                        </div>
+
+                        <div class="comp-card">
+                            <div class="comp-icon"><i class="fas fa-database"></i></div>
+                            <div class="comp-content">
+                                <h4 data-i18n="comp_3_title">Data & BI Dashboards</h4>
+                                <p data-i18n="comp_3_desc">Complex SQL queries, Power BI interactive reports, and Python-driven analytical web applications.</p>
+                            </div>
+                        </div>
+
+                        <div class="comp-card">
+                            <div class="comp-icon"><i class="fas fa-microchip"></i></div>
+                            <div class="comp-content">
+                                <h4 data-i18n="comp_4_title">IoT & Smart Systems</h4>
+                                <p data-i18n="comp_4_desc">Hardware prototyping, ESP32 microcontrollers, LoRa, MQTT, and smart occupancy monitoring.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Personal Info Strip -->
+                    <div class="about-meta-list">
+                        <div class="meta-item">
+                            <span class="meta-label" data-i18n="meta_degree">Degree:</span>
+                            <span class="meta-val">B.Sc. in Artificial Intelligence (2027)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label" data-i18n="meta_location">Location:</span>
+                            <span class="meta-val">Egypt (Available for Remote / Hybrid)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label" data-i18n="meta_email">Email:</span>
+                            <span class="meta-val"><a href="mailto:an2443059@gmail.com">an2443059@gmail.com</a></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label" data-i18n="meta_phone">Phone:</span>
+                            <span class="meta-val"><a href="tel:+201001042364">+20 100 104 2364</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 🌟 LEADERSHIP & GRADUATION SPOTLIGHTS (3 REAL PHOTOS) ========== -->
+    <section class="section-block leadership-section" id="leadership">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="lead_tag">// 02. LEADERSHIP & MILESTONES</span>
+                <h2 class="section-heading" data-i18n="lead_title">Graduation & Team Leadership Spotlights</h2>
+                <div class="heading-line"></div>
+                <p class="section-subtitle" data-i18n="lead_subtitle">Directing cross-functional engineering teams, architecting AI & Data pipelines, and delivering executive presentations.</p>
+            </div>
+
+            <div class="spotlights-grid">
+
+                <!-- Spotlight 1: NTI Data Analysis Track -->
+                <div class="spotlight-card">
+                    <div class="spotlight-image-box">
+                        <img src="images/leader-nti-data-analysis.png" alt="Ahmed Nour - Team Leader NTI Data Analysis" class="spotlight-img" loading="lazy">
+                        <div class="spotlight-badge nti-badge">
+                            <i class="fas fa-crown"></i> Team Leader // NTI
+                        </div>
+                    </div>
+                    <div class="spotlight-body">
+                        <div class="spotlight-domain">Data Analysis & BI Track</div>
+                        <h3 class="spotlight-title" data-i18n="spot1_title">Team Leader — NTI Data Analysis Track</h3>
+                        <p class="spotlight-text" data-i18n="spot1_desc">
+                            Selected as Team Leader for our NTI Data Analysis graduation project following a strong academic record. Over the program, I directed the end-to-end development of the Account Risk Dashboard, managed cross-functional team workflows, overseen data pipeline modeling, and successfully delivered actionable customer churn insights.
+                        </p>
+                        <div class="spotlight-tags">
+                            <span>#TeamLeader</span>
+                            <span>#AccountRiskDashboard</span>
+                            <span>#CustomerChurn</span>
+                            <span>#PowerBI</span>
+                            <span>#DataPipelines</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spotlight 2: NTI AI Track -->
+                <div class="spotlight-card">
+                    <div class="spotlight-image-box">
+                        <img src="images/leader-nti-ai-track.png" alt="Ahmed Nour - Team Leader NTI AI Track" class="spotlight-img" loading="lazy">
+                        <div class="spotlight-badge ai-badge">
+                            <i class="fas fa-brain"></i> Team Leader // AI Track
+                        </div>
+                    </div>
+                    <div class="spotlight-body">
+                        <div class="spotlight-domain">Computer Vision & Deep Learning</div>
+                        <h3 class="spotlight-title" data-i18n="spot2_title">Team Leader — NTI AI Track</h3>
+                        <p class="spotlight-text" data-i18n="spot2_desc">
+                            Appointed as Team Leader for our NTI AI graduation project. I directed the development and deployment of an AI-powered system for automated fight detection using deep learning on video feeds. I managed the end-to-end project, overseen the integration of computer vision models, coordinated diverse workflows, and successfully presented the real-time detection solution.
+                        </p>
+                        <div class="spotlight-tags">
+                            <span>#TeamLeader</span>
+                            <span>#FightDetection</span>
+                            <span>#ComputerVision</span>
+                            <span>#VideoDeepLearning</span>
+                            <span>#RealTimeInference</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spotlight 3: Smart Parking System Project -->
+                <div class="spotlight-card">
+                    <div class="spotlight-image-box">
+                        <img src="images/smart-parking-iot-model.jpg" alt="Ahmed Nour - Smart Parking System Project" class="spotlight-img" loading="lazy">
+                        <div class="spotlight-badge iot-badge">
+                            <i class="fas fa-microchip"></i> University IoT Project
+                        </div>
+                    </div>
+                    <div class="spotlight-body">
+                        <div class="spotlight-domain">IoT & Embedded Systems</div>
+                        <h3 class="spotlight-title" data-i18n="spot3_title">Smart Parking System Project</h3>
+                        <p class="spotlight-text" data-i18n="spot3_desc">
+                            Selected to lead our university IoT project. I spearheaded the complete development of an IoT-based Smart Parking System. I directed the design, managed the hardware and software integration for real-time occupancy monitoring, oversee system validation, and successfully presented a working prototype to the faculty panel.
+                        </p>
+                        <div class="spotlight-tags">
+                            <span>#ProjectLeader</span>
+                            <span>#SmartParking</span>
+                            <span>#IoTHardware</span>
+                            <span>#ESP32</span>
+                            <span>#DeltaUniversity</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION (ALL 12 PROJECTS WITH THUMBNAILS) ========== -->
+    <section class="section-block projects-section" id="projects">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="proj_tag">// 03. COMPLETE ARSENAL</span>
+                <h2 class="section-heading" data-i18n="proj_title">Engineering Impactful AI & IoT Systems</h2>
+                <div class="heading-line"></div>
+                <p class="section-subtitle" data-i18n="proj_subtitle">Production-oriented machine learning pipelines, deep learning architectures, business intelligence, and embedded hardware systems.</p>
+            </div>
+
+            <!-- Project Filter Controls -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Projects (12)</button>
+                <button class="filter-btn" data-filter="dl" data-i18n="filter_dl">Computer Vision & Deep Learning</button>
+                <button class="filter-btn" data-filter="ml" data-i18n="filter_ml">Predictive ML</button>
+                <button class="filter-btn" data-filter="bi" data-i18n="filter_bi">Analytics & BI</button>
+                <button class="filter-btn" data-filter="iot" data-i18n="filter_iot">IoT & Embedded</button>
+            </div>
+
+            <!-- Projects Grid (12 Projects) -->
+            <div class="projects-grid" id="projectsContainer">
+
+                <!-- 1. AI Fake Detection System (Multimodal) -->
+                <div class="project-card" data-category="dl">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-deepfake.jpg" alt="AI Deepfake Detection System" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag cv-tag">Vision & Audio</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">Deep Learning</span>
+                                <span class="proj-badge success">+30% Accuracy</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77/AI-Fake-Detection-System" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p1_title">AI Fake Detection System (Multimodal Deepfake)</h3>
+
+                        <p class="project-desc" data-i18n="p1_desc">
+                            End-to-end deepfake detection pipeline for image and audio data using CNN architectures. Improved voice anomaly classification by 30% and cut false positives by 25% through spectrogram-based audio feature extraction.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>PyTorch</span>
+                            <span>OpenCV</span>
+                            <span>Librosa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Automated Fight Detection System -->
+                <div class="project-card" data-category="dl">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-violence.jpg" alt="Fight Detection System" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag cv-tag">Real-Time Video</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">NTI AI Track</span>
+                                <span class="proj-badge highlight">Team Leader</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p2_title">Automated Fight & Violence Detection System</h3>
+
+                        <p class="project-desc" data-i18n="p2_desc">
+                            AI-powered surveillance system for automated real-time violence detection across streaming video feeds using CNN-LSTM and 3D-CNN models, analyzing temporal motion patterns for public security.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>PyTorch</span>
+                            <span>CNN-LSTM</span>
+                            <span>OpenCV</span>
+                            <span>Real-Time CCTV</span>
+                            <span>Deep Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Cow Disease Detection -->
+                <div class="project-card" data-category="dl">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-cow.jpg" alt="Cow Disease Detection" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag cv-tag">AgriTech Vision</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">Computer Vision</span>
+                                <span class="proj-badge">Healthcare</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77/cow-disease-detection" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p3_title">Cow & Livestock Disease Detection</h3>
+
+                        <p class="project-desc" data-i18n="p3_desc">
+                            CNN-based image classification system for automated livestock disease diagnosis, supporting earlier identification and localized treatment through computer vision.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>PyTorch</span>
+                            <span>Keras</span>
+                            <span>CNN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Fake Job Posting Detection -->
+                <div class="project-card" data-category="dl">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-fakejob.jpg" alt="Fake Job Posting Detection" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag nlp-tag">NLP & Text</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">NLP</span>
+                                <span class="proj-badge highlight">Fraud Prevention</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77/fake-job-detection" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p4_title">Fake Job Posting Detection</h3>
+
+                        <p class="project-desc" data-i18n="p4_desc">
+                            NLP-based classifier that flags fraudulent job listings from job description text and structured metadata, built to safeguard job seekers and analyze deceptive recruiting patterns.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>NLP</span>
+                            <span>Scikit-learn</span>
+                            <span>Feature Extraction</span>
+                            <span>Text Mining</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Predictive Maintenance System -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-maintenance.jpg" alt="Predictive Maintenance System" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag ml-tag">Predictive ML</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">XAI / SHAP</span>
+                                <span class="proj-badge highlight">Flask Deployed</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p5_title">Predictive Maintenance & Failure Forecasting System</h3>
+
+                        <p class="project-desc" data-i18n="p5_desc">
+                            End-to-end industrial predictive pipeline to forecast equipment failures from sensor data. Compared Random Forest, XGBoost, and LightGBM models with SHAP-based interpretability and Flask deployment.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>XGBoost</span>
+                            <span>LightGBM</span>
+                            <span>Flask</span>
+                            <span>SHAP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. AI Employee Attrition & Retention Intelligence -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-attrition.jpg" alt="AI Employee Attrition Intelligence" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag ml-tag">Enterprise ML</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">Decision Support</span>
+                                <span class="proj-badge highlight">Retention XAI</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77/AI-Employee-Attrition-Retention-Intelligence-System" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p6_title">AI Employee Attrition & Retention Intelligence</h3>
+
+                        <p class="project-desc" data-i18n="p6_desc">
+                            AI-based decision-support system predicting employee attrition risks and delivering personalized retention recommendations. Features clustering, SHAP feature importance, and interactive dashboarding.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>SHAP / XAI</span>
+                            <span>Clustering</span>
+                            <span>Streamlit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Customer Segmentation Analysis -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-segmentation.jpg" alt="Customer Segmentation Analysis" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag ml-tag">Clustering</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">Unsupervised ML</span>
+                                <span class="proj-badge">E-Commerce</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p7_title">Customer Segmentation Analysis</h3>
+
+                        <p class="project-desc" data-i18n="p7_desc">
+                            K-Means clustering on e-commerce transaction data to segment customer cohorts by purchasing behaviors, empowering targeted marketing strategies and lifetime value optimization.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>K-Means</span>
+                            <span>Seaborn</span>
+                            <span>EDA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. COVID-19 Trend Analysis -->
+                <div class="project-card" data-category="bi">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-covid.jpg" alt="COVID-19 Trend Analysis" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag bi-tag">Time Series</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">Time-Series</span>
+                                <span class="proj-badge">Epidemiology</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p8_title">COVID-19 Global Trend Analysis</h3>
+
+                        <p class="project-desc" data-i18n="p8_desc">
+                            Processed global datasets to analyze transmission and mortality trends; built interactive time-series plots and regional comparison dashboards to visualize infection waves.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Plotly</span>
+                            <span>Data Cleaning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Account Risk & Churn Dashboard -->
+                <div class="project-card" data-category="bi">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-risk-dash.jpg" alt="Account Risk Dashboard" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag bi-tag">Executive BI</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">NTI Data Track</span>
+                                <span class="proj-badge highlight">Power BI</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p9_title">Account Risk & Customer Churn Dashboard</h3>
+
+                        <p class="project-desc" data-i18n="p9_desc">
+                            Comprehensive banking analytics dashboard designed during NTI track leadership. Delivers granular customer demographics, monthly revenue risk modeling, and churn vulnerability alerts.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Power BI</span>
+                            <span>SQL Server</span>
+                            <span>Data Modeling</span>
+                            <span>DAX</span>
+                            <span>KPIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Sales Performance Dashboard -->
+                <div class="project-card" data-category="bi">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-sales.jpg" alt="Sales Performance Dashboard" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag bi-tag">BI & Reporting</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">Power BI</span>
+                                <span class="proj-badge">Retail Analytics</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p10_title">Sales Performance & Revenue Dashboard</h3>
+
+                        <p class="project-desc" data-i18n="p10_desc">
+                            Analyzed retail sales data to identify top-performing revenue drivers and profitability indicators; engineered interactive Power BI reports with dynamic slice-and-dice metrics.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Power BI</span>
+                            <span>Excel</span>
+                            <span>Business Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Smart Parking System (IoT) -->
+                <div class="project-card" data-category="iot">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-smart-parking.jpg" alt="Smart Parking System" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag iot-tag">IoT Hardware</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">ESP32 Hardware</span>
+                                <span class="proj-badge highlight">University Project</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77/smart-parking-system" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p11_title">IoT Smart Parking Management System</h3>
+
+                        <p class="project-desc" data-i18n="p11_desc">
+                            IoT garage-management system engineered with ESP32 controllers and IR sensors for vehicle counting, automated barriers, and real-time bay occupancy display via an interactive web interface.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>ESP32</span>
+                            <span>IR Sensors</span>
+                            <span>C++ / Embedded</span>
+                            <span>HTML/CSS/JS</span>
+                            <span>Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Open Area Monitoring System (IoT) -->
+                <div class="project-card" data-category="iot">
+                    <div class="project-thumb-box">
+                        <img src="images/real-proj-open-area.jpg" alt="Open Area Monitoring System" class="proj-thumb-img" loading="lazy">
+                        <span class="thumb-tag iot-tag">Sensor Network</span>
+                    </div>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-badge-strip">
+                                <span class="proj-badge">LoRa & MQTT</span>
+                                <span class="proj-badge">Environmental</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="proj-link" title="GitHub Repository">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title" data-i18n="p12_title">Open Area Environmental Monitoring System</h3>
+
+                        <p class="project-desc" data-i18n="p12_desc">
+                            IoT-based environmental monitoring platform transmitting sensor readings across long distances via LoRa and MQTT to a central telemetry dashboard for agricultural and safety oversight.
+                        </p>
+
+                        <div class="project-tech-tags">
+                            <span>ESP32</span>
+                            <span>LoRa</span>
+                            <span>MQTT</span>
+                            <span>Telemetry</span>
+                            <span>IoT Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE SECTION ========== -->
+    <section class="section-block experience-section" id="experience">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="exp_tag">// 04. CAREER PATH</span>
+                <h2 class="section-heading" data-i18n="exp_title">Professional Experience & Internships</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Experience Item 1: CIB -->
+                <div class="timeline-card" data-highlight="cib">
+                    <div class="timeline-dot">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="timeline-header">
+                        <div class="company-brand">
+                            <span class="company-badge cib">CIB Egypt</span>
+                            <h3 class="role-title" data-i18n="cib_role">AI Engineer Intern</h3>
+                            <h4 class="company-name">Commercial International Bank (Green Leap Program)</h4>
+                        </div>
+                        <div class="timeline-period">
+                            <i class="far fa-calendar-alt"></i> July 2025
+                        </div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-i18n="cib_bullet_1">Evaluated and benchmarked <strong>3+ AI decision-making frameworks</strong> to inform data-driven process improvements, raising workflow integration efficiency by approximately <strong>15%</strong>.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-i18n="cib_bullet_2">Collaborated with cross-functional business and technical teams to identify <strong>2+ key operational improvement areas</strong>, contributing to enhanced automation and reporting solutions.</span>
+                            </li>
+                        </ul>
+                        <div class="card-tech-pills">
+                            <span class="pill">AI Decision Frameworks</span>
+                            <span class="pill">Process Automation</span>
+                            <span class="pill">FinTech Intelligence</span>
+                            <span class="pill">Workflow Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2: BUE -->
+                <div class="timeline-card" data-highlight="bue">
+                    <div class="timeline-dot">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-header">
+                        <div class="company-brand">
+                            <span class="company-badge bue">BUE</span>
+                            <h3 class="role-title" data-i18n="bue_role">Machine Learning Trainee</h3>
+                            <h4 class="company-name">British University in Egypt</h4>
+                        </div>
+                        <div class="timeline-period">
+                            <i class="far fa-calendar-alt"></i> 2025
+                        </div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-i18n="bue_bullet_1">Completed project-based modules in machine learning and computer vision, improving model accuracy by <strong>10–20%</strong> across iterations through rigorous iterative testing and feature refinement.</span>
+                            </li>
+                        </ul>
+                        <div class="card-tech-pills">
+                            <span class="pill">Computer Vision</span>
+                            <span class="pill">Feature Refinement</span>
+                            <span class="pill">Model Accuracy</span>
+                            <span class="pill">Deep Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3: NTI -->
+                <div class="timeline-card" data-highlight="nti">
+                    <div class="timeline-dot">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-header">
+                        <div class="company-brand">
+                            <span class="company-badge nti">NTI Egypt</span>
+                            <h3 class="role-title" data-i18n="nti_role">Artificial Intelligence Trainee</h3>
+                            <h4 class="company-name">National Telecommunication Institute</h4>
+                        </div>
+                        <div class="timeline-period">
+                            <i class="far fa-calendar-alt"></i> Sep 2025
+                        </div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-i18n="nti_bullet_1">Completed an intensive <strong>120-hour program</strong> in Artificial Intelligence and Machine Learning covering the end-to-end data lifecycle.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-i18n="nti_bullet_2">Gained extensive hands-on experience in data preprocessing, exploratory data analysis (EDA), and feature engineering on real-world datasets.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span data-i18n="nti_bullet_3">Built and evaluated classification and regression models using <strong>Accuracy, Precision, Recall, F1-score, and ROC-AUC</strong> metrics.</span>
+                            </li>
+                        </ul>
+                        <div class="card-tech-pills">
+                            <span class="pill">Python</span>
+                            <span class="pill">Scikit-learn</span>
+                            <span class="pill">Pandas & NumPy</span>
+                            <span class="pill">Flask</span>
+                            <span class="pill">Git</span>
+                            <span class="pill">ROC-AUC Evaluation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS & TECH STACK SECTION ========== -->
+    <section class="section-block skills-section" id="skills">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="skills_tag">// 05. TECHNICAL ARSENAL</span>
+                <h2 class="section-heading" data-i18n="skills_title">Technologies & Core Competencies</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="skills-categories-grid">
+
+                <!-- Category 1: Machine Learning & Deep Learning -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <div class="cat-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 data-i18n="cat_mldl">Machine Learning & Deep Learning</h3>
+                    </div>
+                    <div class="skills-badge-list">
+                        <div class="skill-chip"><i class="devicon-python-plain colored"></i> <span>Python</span></div>
+                        <div class="skill-chip"><i class="devicon-pytorch-original colored"></i> <span>PyTorch</span></div>
+                        <div class="skill-chip"><i class="devicon-tensorflow-original colored"></i> <span>TensorFlow</span></div>
+                        <div class="skill-chip"><i class="devicon-scikitlearn-plain colored"></i> <span>Scikit-Learn</span></div>
+                        <div class="skill-chip"><i class="devicon-keras-plain colored"></i> <span>Keras</span></div>
+                        <div class="skill-chip"><i class="fas fa-tree"></i> <span>XGBoost</span></div>
+                        <div class="skill-chip"><i class="fas fa-bolt"></i> <span>LightGBM</span></div>
+                        <div class="skill-chip"><i class="fas fa-brain"></i> <span>CNNs & RNNs</span></div>
+                        <div class="skill-chip"><i class="fas fa-layer-group"></i> <span>LSTMs</span></div>
+                        <div class="skill-chip"><i class="fas fa-robot"></i> <span>Transformers</span></div>
+                        <div class="skill-chip"><i class="fas fa-smile-beam"></i> <span>Hugging Face</span></div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Data Science & Analytics -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <div class="cat-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h3 data-i18n="cat_ds">Data Science & Analytics</h3>
+                    </div>
+                    <div class="skills-badge-list">
+                        <div class="skill-chip"><i class="devicon-pandas-plain colored"></i> <span>Pandas</span></div>
+                        <div class="skill-chip"><i class="devicon-numpy-plain colored"></i> <span>NumPy</span></div>
+                        <div class="skill-chip"><i class="fas fa-search"></i> <span>Exploratory Data Analysis (EDA)</span></div>
+                        <div class="skill-chip"><i class="fas fa-cogs"></i> <span>Feature Engineering</span></div>
+                        <div class="skill-chip"><i class="fas fa-chart-area"></i> <span>Predictive Modeling</span></div>
+                        <div class="skill-chip"><i class="fas fa-code-branch"></i> <span>MLflow</span></div>
+                        <div class="skill-chip"><i class="devicon-jupyter-plain colored"></i> <span>Jupyter Notebooks</span></div>
+                        <div class="skill-chip"><i class="fas fa-lightbulb"></i> <span>SHAP Explainability</span></div>
+                    </div>
+                </div>
+
+                <!-- Category 3: BI, Visualization & Deployment -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <div class="cat-icon"><i class="fas fa-desktop"></i></div>
+                        <h3 data-i18n="cat_bi">BI, Reporting & Web Deployment</h3>
+                    </div>
+                    <div class="skills-badge-list">
+                        <div class="skill-chip"><i class="fas fa-chart-bar"></i> <span>Power BI</span></div>
+                        <div class="skill-chip"><i class="devicon-streamlit-plain colored"></i> <span>Streamlit</span></div>
+                        <div class="skill-chip"><i class="devicon-flask-original"></i> <span>Flask</span></div>
+                        <div class="skill-chip"><i class="devicon-docker-plain colored"></i> <span>Docker</span></div>
+                        <div class="skill-chip"><i class="devicon-git-plain colored"></i> <span>Git & GitHub</span></div>
+                        <div class="skill-chip"><i class="devicon-linux-plain"></i> <span>Linux Environment</span></div>
+                        <div class="skill-chip"><i class="fas fa-chart-line"></i> <span>Matplotlib & Seaborn</span></div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Databases, Languages, IoT & Vision -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <div class="cat-icon"><i class="fas fa-database"></i></div>
+                        <h3 data-i18n="cat_db">Databases, Languages, IoT & Vision</h3>
+                    </div>
+                    <div class="skills-badge-list">
+                        <div class="skill-chip"><i class="devicon-mysql-plain colored"></i> <span>SQL & MySQL</span></div>
+                        <div class="skill-chip"><i class="devicon-microsoftsqlserver-plain colored"></i> <span>SQL Server</span></div>
+                        <div class="skill-chip"><i class="devicon-opencv-plain colored"></i> <span>OpenCV</span></div>
+                        <div class="skill-chip"><i class="fas fa-wave-square"></i> <span>Librosa (Spectrograms)</span></div>
+                        <div class="skill-chip"><i class="fas fa-microchip"></i> <span>ESP32 & Sensors</span></div>
+                        <div class="skill-chip"><i class="fas fa-broadcast-tower"></i> <span>LoRa & MQTT</span></div>
+                        <div class="skill-chip"><i class="devicon-cplusplus-plain colored"></i> <span>C / C++</span></div>
+                        <div class="skill-chip"><i class="devicon-csharp-plain colored"></i> <span>C#</span></div>
+                        <div class="skill-chip"><i class="devicon-java-plain colored"></i> <span>Java</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CERTIFICATIONS SECTION ========== -->
+    <section class="section-block certs-section" id="certifications">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="certs_tag">// 06. CREDENTIALS</span>
+                <h2 class="section-heading" data-i18n="certs_title">Verified Certifications & Accreditations</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="certs-grid">
+                <!-- Cert 1: NVIDIA DLI -->
+                <div class="cert-card">
+                    <div class="cert-icon nvidia"><i class="fas fa-microchip"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-issuer">ITI / NVIDIA</div>
+                        <h3 class="cert-title">NVIDIA DLI: Generative AI</h3>
+                        <p class="cert-meta"><i class="far fa-calendar-check"></i> August 2025</p>
+                        <p class="cert-desc" data-i18n="c1_desc">Deep Learning Institute certification specializing in generative models and transformer architectures.</p>
+                    </div>
+                </div>
+
+                <!-- Cert 2: NTI / Huawei -->
+                <div class="cert-card">
+                    <div class="cert-icon huawei"><i class="fas fa-award"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-issuer">NTI / HUAWEI Egypt</div>
+                        <h3 class="cert-title">AI Certification</h3>
+                        <p class="cert-meta"><i class="far fa-calendar-check"></i> 2025</p>
+                        <p class="cert-desc" data-i18n="c2_desc">Comprehensive accreditation in Artificial Intelligence foundations and machine learning algorithms.</p>
+                    </div>
+                </div>
+
+                <!-- Cert 3: CIB Green Leap -->
+                <div class="cert-card">
+                    <div class="cert-icon cib"><i class="fas fa-building-columns"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-issuer">CIB Egypt</div>
+                        <h3 class="cert-title">Green Leap AI Internship Certificate</h3>
+                        <p class="cert-meta"><i class="far fa-calendar-check"></i> July 2025</p>
+                        <p class="cert-desc" data-i18n="c3_desc">Corporate certification for benchmarking AI decision systems and optimizing banking operations.</p>
+                    </div>
+                </div>
+
+                <!-- Cert 4: BUE -->
+                <div class="cert-card">
+                    <div class="cert-icon bue"><i class="fas fa-university"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-issuer">British University in Egypt</div>
+                        <h3 class="cert-title">Application of Artificial Intelligence</h3>
+                        <p class="cert-meta"><i class="far fa-calendar-check"></i> 2025</p>
+                        <p class="cert-desc" data-i18n="c4_desc">Project-driven certification in computer vision algorithms and machine learning iterative tuning.</p>
+                    </div>
+                </div>
+
+                <!-- Cert 5: Simplilearn -->
+                <div class="cert-card">
+                    <div class="cert-icon simpli"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-issuer">Simplilearn</div>
+                        <h3 class="cert-title">Machine Learning for Beginners</h3>
+                        <p class="cert-meta"><i class="far fa-calendar-check"></i> Verified</p>
+                        <p class="cert-desc" data-i18n="c5_desc">Foundational training covering supervised and unsupervised learning paradigms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EDUCATION SECTION ========== -->
+    <section class="section-block education-section" id="education">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="edu_tag">// 07. ACADEMICS</span>
+                <h2 class="section-heading" data-i18n="edu_title">Academic Foundation</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="edu-card-main">
+                <div class="edu-badge-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="edu-info">
+                    <div class="edu-degree-tag" data-i18n="edu_degree_tag">Bachelor of Science</div>
+                    <h3 class="edu-title" data-i18n="edu_degree">B.Sc. in Artificial Intelligence</h3>
+                    <h4 class="edu-university" data-i18n="edu_uni">Delta University for Science and Technology, Egypt</h4>
+                    <p class="edu-period"><i class="far fa-calendar-alt"></i> Expected: June 2027</p>
+                    <p class="edu-description" data-i18n="edu_desc">
+                        Rigorous academic curriculum emphasizing core theoretical mathematics, linear algebra, statistical analysis, deep neural networks, computer vision, data structures, algorithms, and software engineering principles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RESUME / CV DOWNLOAD CALLOUT ========== -->
+    <section class="cv-callout-section">
+        <div class="container">
+            <div class="cv-banner">
+                <div class="banner-content">
+                    <h3 data-i18n="cv_banner_title">Looking for the complete resume?</h3>
+                    <p data-i18n="cv_banner_desc">View or print an ATS-optimized, executive version of Ahmed Mohamed Nour Eldin's CV.</p>
+                </div>
+                <div class="banner-actions">
+                    <a href="cv.html" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> <span data-i18n="cv_btn_view">View CV Online</span>
+                    </a>
+                    <a href="cv.html?print=true" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-print"></i> <span data-i18n="cv_btn_print">Print / Save as PDF</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="section-block contact-section" id="contact">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-i18n="contact_tag">// 08. GET IN TOUCH</span>
+                <h2 class="section-heading" data-i18n="contact_title">Let's Build Something Intelligent</h2>
+                <div class="heading-line"></div>
+                <p class="section-subtitle" data-i18n="contact_sub">Have an AI challenge, a data problem, or an internship/role opportunity? I would love to connect!</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Methods -->
+                <div class="contact-info-panel">
+                    <h3 class="panel-title" data-i18n="contact_methods">Direct Communication</h3>
+                    <p class="panel-desc" data-i18n="contact_methods_sub">I am actively open to AI engineering internships, data science roles, and collaborative machine learning projects.</p>
+
+                    <div class="contact-card">
+                        <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="c-detail">
+                            <span class="c-label" data-i18n="c_email">Email</span>
+                            <span class="c-val"><a href="mailto:an2443059@gmail.com">an2443059@gmail.com</a></span>
+                        </div>
+                        <button class="copy-btn" data-copy="an2443059@gmail.com" title="Copy Email">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="c-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                        <div class="c-detail">
+                            <span class="c-label">WhatsApp</span>
+                            <span class="c-val"><a href="https://wa.me/201001042364" target="_blank" rel="noopener">+20 100 104 2364</a></span>
+                        </div>
+                        <a href="https://wa.me/201001042364" target="_blank" rel="noopener" class="direct-link-btn" title="Open Chat">
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="c-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+                        <div class="c-detail">
+                            <span class="c-label">LinkedIn</span>
+                            <span class="c-val"><a href="https://linkedin.com/in/ahmed-nour-856392330" target="_blank" rel="noopener">ahmed-nour-856392330</a></span>
+                        </div>
+                        <a href="https://linkedin.com/in/ahmed-nour-856392330" target="_blank" rel="noopener" class="direct-link-btn" title="View Profile">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="c-icon github"><i class="fab fa-github"></i></div>
+                        <div class="c-detail">
+                            <span class="c-label">GitHub</span>
+                            <span class="c-val"><a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener">github.com/ahmed-nour77</a></span>
+                        </div>
+                        <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" class="direct-link-btn" title="View Repos">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Message Form -->
+                <div class="contact-form-panel">
+                    <form id="contactForm" class="contact-form" action="mailto:an2443059@gmail.com" method="POST" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="userName" data-i18n="form_name">Your Name</label>
+                            <div class="input-wrap">
+                                <i class="far fa-user"></i>
+                                <input type="text" id="userName" name="name" placeholder="John Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userEmail" data-i18n="form_email">Your Email</label>
+                            <div class="input-wrap">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" id="userEmail" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userSubject" data-i18n="form_subject">Subject</label>
+                            <div class="input-wrap">
+                                <i class="far fa-bookmark"></i>
+                                <input type="text" id="userSubject" name="subject" placeholder="Project Discussion / AI Role" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userMessage" data-i18n="form_message">Message</label>
+                            <div class="input-wrap textarea-wrap">
+                                <i class="far fa-comment-dots"></i>
+                                <textarea id="userMessage" name="message" rows="5" placeholder="Hi Ahmed, I would love to discuss a project..." required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="form_send">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#hero" class="f-logo">
+                    <span class="brand-code">&lt;</span>Ahmed.Nour<span class="brand-code">/&gt;</span>
+                </a>
+                <p data-i18n="footer_tagline">Data Scientist & AI Engineer — Building intelligence through code.</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/ahmed-nour-856392330" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/201001042364" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:an2443059@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> Ahmed Mohamed Nour Eldin. <span data-i18n="footer_rights">All Rights Reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMsg">Email copied to clipboard!</span>
     </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Experience &amp; Training</div>
-        <h2>Where I've been building</h2>
-      </div>
-      <div class="timeline">
-        <div class="tl-item">
-          <span class="tl-date">Feb 2026</span>
-          <h4>Data Analysis Diploma</h4>
-          <span class="org">Route IT Training Center</span>
-          <p>Full diploma covering EDA, visualization, dashboarding and reporting — built end-to-end data pipelines and interactive dashboards on real-world datasets.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-date">Sept 2025</span>
-          <h4>Data Analysis Trainee</h4>
-          <span class="org">Ministry of Communications &amp; IT (MCIT) — Microsoft Initiative</span>
-          <p>Trained in data analysis with Excel, Python and Power BI under the "Tawar w Ghayar" initiative; applied cleaning and visualization techniques to real business datasets.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-date">Sept 2025</span>
-          <h4>AI &amp; Machine Learning Bootcamp Trainee</h4>
-          <span class="org">60+ hours of hands-on training</span>
-          <p>Improved baseline model performance by up to 18% through iterative tuning on real-world datasets.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-date">2025</span>
-          <h4>Data Analysis Track</h4>
-          <span class="org">NTI — National Telecommunication Institute</span>
-          <p>Covered Python for data analysis, statistical thinking, visualization tools and data storytelling.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-date">2025</span>
-          <h4>Machine Learning Trainee</h4>
-          <span class="org">British University in Egypt (BUE)</span>
-          <p>Project-based modules in machine learning and computer vision, improving model accuracy by 10–20% across iterations.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-date">July 2025</span>
-          <h4>AI Engineer Intern</h4>
-          <span class="org">Commercial International Bank (CIB Egypt) — Green Leap Program</span>
-          <p>Evaluated and benchmarked 3+ AI decision-making frameworks, improving workflow integration efficiency by ~15%; collaborated cross-functionally to identify key automation opportunities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Skills</div>
-        <h2>Tools &amp; technologies</h2>
-      </div>
-      <div class="skill-cols">
-        <div class="skill-col">
-          <h4>Languages</h4>
-          <ul><li>Python</li><li>SQL</li><li>C / C++</li><li>C#</li><li>Java</li></ul>
-        </div>
-        <div class="skill-col">
-          <h4>AI / Machine Learning</h4>
-          <ul><li>Scikit-learn, XGBoost</li><li>TensorFlow, PyTorch, Keras</li><li>CNNs, RNNs, LSTMs, Transformers</li><li>Feature Engineering</li></ul>
-        </div>
-        <div class="skill-col">
-          <h4>NLP &amp; Computer Vision</h4>
-          <ul><li>OpenCV, Librosa</li><li>Hugging Face</li><li>Natural Language Processing</li></ul>
-        </div>
-        <div class="skill-col">
-          <h4>Data &amp; Visualization</h4>
-          <ul><li>Pandas, NumPy</li><li>Power BI, Matplotlib, Seaborn, Plotly</li><li>Streamlit, Excel (Advanced)</li></ul>
-        </div>
-        <div class="skill-col">
-          <h4>Databases &amp; Tools</h4>
-          <ul><li>MySQL, SQL Server</li><li>Git, Docker, Jupyter Notebook</li><li>Linux, VS Code</li></ul>
-        </div>
-        <div class="skill-col">
-          <h4>Certifications</h4>
-          <ul><li>NVIDIA DLI — Generative AI (2025)</li><li>AI Certification — NTI / Huawei Egypt</li><li>Machine Learning for Beginners — Simplilearn</li><li>Data Analysis Diploma — Route IT</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROJECTS ================= -->
-  <section id="projects">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Work</div>
-        <h2>Projects</h2>
-        <p class="lede">Grouped by domain — deep learning and vision, data analysis, and IoT / embedded systems. More on <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener">GitHub</a>.</p>
-      </div>
-
-      <div class="domain">
-        <div class="domain-head"><h3>AI &amp; Deep Learning</h3><span class="count">4 projects</span></div>
-        <div class="grid">
-          <div class="card">
-            <h4>AI Fake Detection System</h4>
-            <p>End-to-end deepfake detection pipeline for image and audio data using CNN architectures. Improved voice-manipulation detection accuracy by 30% and cut false positives by 25% with spectrogram-based models.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">Librosa</span></div>
-            <div class="card-links"><a href="https://github.com/ahmed-nour77/AI-Fake-Detection-System" target="_blank" rel="noopener">GitHub</a></div>
-          </div>
-          <div class="card">
-            <h4>AI Employee Attrition &amp; Retention Intelligence System</h4>
-            <p>An AI-based decision-support system that predicts each employee's attrition risk and, more importantly, explains why — using SHAP to surface the real drivers behind a prediction (overtime, job satisfaction, stalled promotions, income, tenure) instead of treating the model as a black box. Also includes employee segmentation to surface at-risk patterns, retention recommendations for HR, and a What-If Analysis tool to test how changing an employee's conditions shifts their predicted risk. Still under active development.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">SHAP / XAI</span><span class="tag">Clustering</span><span class="tag">Dashboard</span></div>
-            <div class="card-links"><a href="https://github.com/ahmed-nour77/AI-Employee-Attrition-Retention-Intelligence-System" target="_blank" rel="noopener">GitHub</a></div>
-          </div>
-          <div class="card">
-            <h4>Cow Disease Detection</h4>
-            <p>CNN-based image classification system for livestock disease detection, supporting earlier identification and improved classification accuracy.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Keras</span></div>
-            <div class="card-links"><a href="https://github.com/ahmed-nour77/cow-disease-detection" target="_blank" rel="noopener">GitHub</a></div>
-          </div>
-          <div class="card">
-            <h4>Fake Job Posting Detection</h4>
-            <p>NLP-based classifier that flags fraudulent job listings from posting text and metadata, built to help filter scam listings before they reach applicants.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Scikit-learn</span></div>
-            <div class="card-links"><a href="https://github.com/ahmed-nour77/fake-job-detection" target="_blank" rel="noopener">GitHub</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="domain">
-        <div class="domain-head"><h3>Data Analysis &amp; BI</h3><span class="count">3 projects</span></div>
-        <div class="grid">
-          <div class="card">
-            <h4>Sales Performance Dashboard</h4>
-            <p>Analyzed retail sales data to identify revenue trends and KPIs; built interactive Power BI dashboards for monthly and regional performance.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Power BI</span><span class="tag">Excel</span></div>
-          </div>
-          <div class="card">
-            <h4>Customer Segmentation Analysis</h4>
-            <p>K-Means clustering on e-commerce data to segment customers by behavior, with actionable marketing recommendations for each segment.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Seaborn</span></div>
-          </div>
-          <div class="card">
-            <h4>COVID-19 Trend Analysis</h4>
-            <p>Processed global datasets to analyze infection and mortality trends; built interactive time-series and country-level dashboards.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="domain">
-        <div class="domain-head"><h3>IoT &amp; Embedded Systems</h3><span class="count">2 projects</span></div>
-        <div class="grid">
-          <div class="card">
-            <h4>Smart Parking System</h4>
-            <p>IoT garage-management system built around an ESP32 controller with IR sensors for vehicle counting, servo-driven gates, and a web dashboard for live occupancy and reservations. A flame sensor and DHT11 trigger an automatic emergency mode that opens exit gates during a fire or heat spike.</p>
-            <div class="tags"><span class="tag">ESP32</span><span class="tag">Sensors</span><span class="tag">HTML/CSS/JS</span><span class="tag">Dashboard</span></div>
-            <div class="card-links"><a href="https://github.com/ahmed-nour77/smart-parking-system" target="_blank" rel="noopener">GitHub</a></div>
-          </div>
-          <div class="card">
-            <h4>Open Area Monitoring System</h4>
-            <p>IoT-based environmental monitoring system transmitting sensor data over LoRa and MQTT to a web platform, improving reliability and enabling efficient remote monitoring.</p>
-            <div class="tags"><span class="tag">ESP32</span><span class="tag">LoRa</span><span class="tag">MQTT</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section id="contact">
-    <div class="wrap">
-      <div class="eyebrow">Contact</div>
-      <h2>Let's talk</h2>
-      <p class="lede max-w">Open to AI engineering, data analysis, and embedded/IoT opportunities — internships, freelance, or full-time. The fastest way to reach me is email.</p>
-    </div>
-    <div class="wrap contact-grid" style="margin-top:36px;">
-      <div>
-        <ul class="contact-list">
-          <li><span class="label">Email</span><a class="value" href="mailto:an2443059@gmail.com">an2443059@gmail.com</a></li>
-          <li><span class="label">Phone</span><span class="value">+20 100 104 2364</span></li>
-          <li><span class="label">LinkedIn</span><a class="value" href="https://linkedin.com/in/ahmed-nour-856392330" target="_blank" rel="noopener">ahmed-nour</a></li>
-          <li><span class="label">GitHub</span><a class="value" href="https://github.com/ahmed-nour77" target="_blank" rel="noopener">ahmed-nour77</a></li>
-          <li><span class="label">Location</span><span class="value">Egypt</span></li>
-          <li><span class="label">Resume</span><a class="value" href="Ahmed_Nour_CV.pdf" download>Download PDF ↓</a></li>
-        </ul>
-      </div>
-      <div>
-        <form class="contact-form" action="mailto:an2443059@gmail.com" method="post" enctype="text/plain">
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
-          <button type="submit">Send Message</button>
-          <p class="form-note">Opens your email client with this message pre-filled — replace with a form backend later if you'd rather it send directly.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site">
-  <div class="wrap footer-row">
-    <span>© 2026 Ahmed Nour</span>
-    <div class="footer-links">
-      <a href="mailto:an2443059@gmail.com">Email</a>
-      <a href="https://github.com/ahmed-nour77" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/ahmed-nour-856392330" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-  }
-  const sections = document.querySelectorAll('main section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-  const setActive = () => {
-    let current = sections[0]?.id;
-    const scrollPos = window.scrollY + 120;
-    sections.forEach(sec => { if (scrollPos >= sec.offsetTop) current = sec.id; });
-    navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-  };
-  window.addEventListener('scroll', setActive);
-  setActive();
-});
-</script>
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
 </body>
+
 </html>

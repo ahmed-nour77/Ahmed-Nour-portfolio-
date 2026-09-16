@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Ahmed Mohamed Nour Eldin | Data Scientist & AI Engineer</title>
+    <meta name="description" content="Resume of Ahmed Mohamed Nour Eldin — Data Scientist & AI Engineer.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --text-heading: #0f172a;
+            --brand-color: #0284c7;
+            --border-line: #cbd5e1;
+            --bg-page: #ffffff;
+            --bg-body: #f1f5f9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.5;
+            font-size: 14px;
+            padding: 30px 15px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg-page);
+            padding: 48px 56px;
+            border-radius: 8px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+        }
+
+        .action-bar {
+            max-width: 850px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-print {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0284c7;
+            color: #ffffff;
+            padding: 9px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3);
+        }
+        .btn-print:hover { background: #0369a1; }
+
+        /* Header */
+        .cv-header {
+            text-align: center;
+            border-bottom: 2px solid var(--text-heading);
+            padding-bottom: 14px;
+            margin-bottom: 20px;
+        }
+        .cv-name {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-heading);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        .cv-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--brand-color);
+            margin-bottom: 8px;
+        }
+        .cv-contacts {
+            font-size: 13px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .cv-contacts a { color: var(--text-main); text-decoration: none; font-weight: 500; }
+        .cv-contacts a:hover { color: var(--brand-color); }
+
+        /* Sections */
+        .cv-section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-heading);
+            border-bottom: 1px solid var(--border-line);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        .summary-text {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        /* Items */
+        .item-block {
+            margin-bottom: 14px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        .item-title {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .item-title span {
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .item-date {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .item-sub {
+            font-size: 13px;
+            color: var(--brand-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cv-bullets {
+            padding-left: 20px;
+            margin-top: 4px;
+        }
+        .cv-bullets li {
+            font-size: 13px;
+            color: var(--text-main);
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        /* Skills table */
+        .skills-list {
+            list-style: none;
+        }
+        .skills-list li {
+            font-size: 13px;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .skills-list strong {
+            color: var(--text-heading);
+            display: inline-block;
+            min-width: 155px;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .action-bar {
+                display: none !important;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="action-bar">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <button onclick="window.print()" class="btn-print"><i class="fas fa-print"></i> Print / Save as PDF</button>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="cv-header">
+            <h1 class="cv-name">Ahmed Mohamed Nour Eldin</h1>
+            <div class="cv-title">Data Scientist / AI Engineer</div>
+            <div class="cv-contacts">
+                <span><i class="fas fa-envelope"></i> <a href="mailto:an2443059@gmail.com">an2443059@gmail.com</a></span>
+                <span>•</span>
+                <span><i class="fas fa-phone"></i> +20 100 104 2364</span>
+                <span>•</span>
+                <span><i class="fas fa-map-marker-alt"></i> Egypt</span>
+                <span>•</span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ahmed-nour-856392330" target="_blank">linkedin.com/in/ahmed-nour-856392330</a></span>
+                <span>•</span>
+                <span><i class="fab fa-github"></i> <a href="https://github.com/ahmed-nour77" target="_blank">github.com/ahmed-nour77</a></span>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="cv-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary-text">
+                AI Engineer with hands-on experience building predictive models, data pipelines, and analytical tools using Python and SQL. Skilled in the full data science lifecycle — data preprocessing, EDA, feature engineering, model development (Scikit-learn, XGBoost, LightGBM, TensorFlow, PyTorch), and evaluation. Experienced building Flask-based analytical apps and visualizing insights with Power BI and Streamlit, with a strong foundation for demand forecasting, customer behaviour analysis, and pricing analytics.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="cv-section">
+            <h2 class="section-title">Education</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">B.Sc. in Artificial Intelligence <span>— Delta University for Science and Technology, Egypt</span></div>
+                    <div class="item-date">Expected: June 2027</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="cv-section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">AI Engineer Intern <span>— Commercial International Bank (CIB Egypt), Green Leap Program</span></div>
+                    <div class="item-date">July 2025</div>
+                </div>
+                <ul class="cv-bullets">
+                    <li>Evaluated and benchmarked 3+ AI decision-making frameworks to inform data-driven process improvements, raising workflow integration efficiency by approximately 15%.</li>
+                    <li>Collaborated with cross-functional business and technical teams to identify 2+ key operational improvement areas, contributing to enhanced automation and reporting solutions.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Machine Learning Trainee <span>— British University in Egypt (BUE)</span></div>
+                    <div class="item-date">2025</div>
+                </div>
+                <ul class="cv-bullets">
+                    <li>Completed project-based modules in machine learning and computer vision, improving model accuracy by 10–20% across iterations through iterative testing and feature refinement.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Artificial Intelligence Trainee <span>— National Telecommunication Institute (NTI)</span></div>
+                    <div class="item-date">Sep 2025</div>
+                </div>
+                <ul class="cv-bullets">
+                    <li>Completed a 120-hour intensive training program in Artificial Intelligence and Machine Learning.</li>
+                    <li>Gained hands-on experience in data preprocessing, exploratory data analysis (EDA), feature engineering, and model development on real-world datasets.</li>
+                    <li>Built classification and regression models and evaluated performance using accuracy, precision, recall, F1-score, and ROC-AUC.</li>
+                    <li>Worked with Python, Scikit-learn, Pandas, NumPy, Flask, and Git throughout the training.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Relevant Projects -->
+        <section class="cv-section">
+            <h2 class="section-title">Relevant Projects</h2>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Predictive Maintenance System <span>| Python, Scikit-learn, XGBoost, LightGBM, Flask, SHAP</span></div>
+                </div>
+                <ul class="cv-bullets">
+                    <li>Built an end-to-end predictive modeling pipeline — data preprocessing, EDA, feature engineering — to forecast equipment failures from sensor data, a workflow directly transferable to demand forecasting and business KPI prediction.</li>
+                    <li>Trained and compared multiple models (Random Forest, XGBoost, LightGBM), selecting the best performer using Accuracy, Precision, Recall, F1-score, and ROC-AUC.</li>
+                    <li>Deployed a Flask web application delivering predictions and SHAP-based model explainability for non-technical stakeholders — mirroring the documentation and interpretability needs of production ML models.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Deepfake Detection System <span>| Python, TensorFlow, PyTorch, OpenCV, Librosa, Keras</span></div>
+                </div>
+                <ul class="cv-bullets">
+                    <li>Engineered an end-to-end CNN classification pipeline across image and audio data, improving detection accuracy by 30% and cutting false positives by 25% through spectrogram-based feature engineering.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Animal Disease Detection System <span>| Python, TensorFlow, PyTorch, OpenCV, Keras</span></div>
+                </div>
+                <ul class="cv-bullets">
+                    <li>Developed a CNN-based system for livestock disease detection using image data. Enhanced classification accuracy and supported early-stage disease identification.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="cv-section">
+            <h2 class="section-title">Technical Skills</h2>
+            <ul class="skills-list">
+                <li><strong>Data & Analytics:</strong> SQL, Python, Pandas, NumPy, EDA, Feature Engineering, Predictive Modeling, MLflow</li>
+                <li><strong>BI & Reporting:</strong> Power BI, Streamlit, Matplotlib, Flask (dashboards & reporting tools)</li>
+                <li><strong>Machine Learning:</strong> Scikit-learn, XGBoost, LightGBM, TensorFlow, PyTorch, Keras, CNNs, RNNs, LSTMs, Transformers</li>
+                <li><strong>Languages & Tools:</strong> Python, SQL, C/C++, C#, Java, Git, Docker, Jupyter, Linux, MySQL, SQL Server</li>
+                <li><strong>Other Domains:</strong> Natural Language Processing (NLP), Computer Vision, OpenCV, Hugging Face</li>
+            </ul>
+        </section>
+
+        <!-- Certifications -->
+        <section class="cv-section">
+            <h2 class="section-title">Certifications</h2>
+            <ul class="cv-bullets">
+                <li><strong>NVIDIA DLI: Generative AI</strong> (ITI / NVIDIA, Aug 2025)</li>
+                <li><strong>AI Certification</strong> (NTI / HUAWEI Egypt)</li>
+                <li><strong>Machine Learning for Beginners</strong> (Simplilearn)</li>
+                <li><strong>Application of AI</strong> (British University in Egypt - BUE)</li>
+                <li><strong>CIB Summer Internship Certificate</strong> — Green Leap Program (July 2025)</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // Check if print query parameter is set
+        if (new URLSearchParams(window.location.search).get('print') === 'true') {
+            window.addEventListener('load', () => window.print());
+        }
+    </script>
+</body>
+</html>
